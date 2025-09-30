@@ -4,7 +4,7 @@ INTS="2 3 6 8 10"
 
 for c in $CUTS; do
   for k in $INTS; do
-    python main_v2.py \
+    python main.py \
       --model schnet_att \
       --save_dir experiments/sweeps_hid8_g10 \
       --cutoff $c \
