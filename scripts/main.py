@@ -26,7 +26,6 @@ class CorrelationLoss(nn.Module):
         vx = y_pred - torch.mean(y_pred)
         vy = y_true - torch.mean(y_true)
         cost = torch.sum(vx * vy) / (torch.sqrt(torch.sum(vx ** 2)) * torch.sqrt(torch.sum(vy ** 2)))
-        #cost -= torch.mean(torch.abs(y_pred - y_true))
         return 1 - cost
 
 class KLLoss(nn.Module):
