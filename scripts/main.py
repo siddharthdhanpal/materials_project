@@ -89,11 +89,11 @@ def load_dataset(root_dir, usecols=1):
         atoms = read(xyz)
         z  = torch.tensor([a.number for a in atoms], dtype=torch.long)
         pos = torch.tensor(atoms.get_positions(), dtype=torch.float32)
-        y = np.loadtxt(sp, dtype=np.float32, usecols=usecols)[:spec_len//2]
+        y = np.loadtxt(sp, dtype=np.float32, usecols=usecols)[:spec_len]
         y/=np.sum(y)
         y  = torch.tensor(y, dtype=torch.float32)  # shape [spec_len]
         data_list.append(Data(z=z, pos=pos, y=y))
-    return data_list, spec_len//2
+    return data_list, spec_len
 
 def split_dataset(data_list, n_val=6, seed=42):
     rnd = random.Random(seed)
