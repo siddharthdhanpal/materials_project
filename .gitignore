@@ -1,0 +1,8 @@
+
+# Large model/checkpoint files
+*.pt
+*.pth
+*.ckpt
+models/**/*.pt
+models/**/*.pth
+models/**/*.ckpt
